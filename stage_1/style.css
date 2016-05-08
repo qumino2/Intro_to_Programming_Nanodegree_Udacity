@@ -1,0 +1,52 @@
+body{
+	padding: 10px 10px;
+	font-family: Helvetica;
+	max-width: 2000px;
+	margin: 0 auto; 
+	font-size: 1.4em;
+}
+h1{
+	text-align: center;
+	color: #408970;
+}
+
+p {
+	margin: 10px 0;
+}
+li{
+	font-size: 20px;
+	line-height: 44px;
+}
+.lesson{
+	background-color: #408970;
+	border-radius:20px;
+	color: white;
+	padding: 10px;
+	margin:10px auto;
+}
+h2{
+	margin: 10px;
+}
+.gain{
+	background-color: #FFFFFF;
+	padding: 4px;
+	margin: 10px;
+	border-radius: 4px;
+	color: black;
+}
+.gain-title{
+	font-size: 28px;
+	margin: 8px;
+	text-align: center;
+	color: #408970;
+}
+.gain-description{
+	font-weight: lighter;
+	margin: 6px;
+}
+ul{
+	list-style-type: none;
+}
+ol{
+	list-style-type: lower-alpha;
+}
