@@ -1,11 +1,21 @@
-body{
-	padding: 10px 10px;
+.header-image {
+	height: 300px;
+	border-radius: 100px;
+}
+
+.image-container {
+	text-align: center;
+}
+
+body {
+	padding: 10px;
 	font-family: Helvetica;
 	max-width: 2000px;
 	margin: 0 auto; 
 	font-size: 1.4em;
 }
-h1{
+
+h1 {
 	text-align: center;
 	color: #408970;
 }
@@ -13,40 +23,49 @@ h1{
 p {
 	margin: 10px 0;
 }
-li{
+
+li {
 	font-size: 20px;
-	line-height: 44px;
+	line-height: 2.0;
 }
-.lesson{
+
+.lesson {
 	background-color: #408970;
 	border-radius:20px;
 	color: white;
 	padding: 10px;
 	margin:10px auto;
+	max-width: 800px
 }
-h2{
+
+h2 {
 	margin: 10px;
 }
-.gain{
+
+.gain {
 	background-color: #FFFFFF;
 	padding: 4px;
 	margin: 10px;
 	border-radius: 4px;
 	color: black;
 }
-.gain-title{
+
+.gain-title {
 	font-size: 28px;
 	margin: 8px;
 	text-align: center;
 	color: #408970;
 }
-.gain-description{
+
+.gain-description {
 	font-weight: lighter;
 	margin: 6px;
 }
-ul{
+
+ul {
 	list-style-type: none;
 }
-ol{
+
+ol {
 	list-style-type: lower-alpha;
 }
