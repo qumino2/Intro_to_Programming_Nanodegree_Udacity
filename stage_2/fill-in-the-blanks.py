@@ -27,17 +27,25 @@ blanks_hard = ["__1__", "__2__", "__3__", "__4__", "__5__", "__6__", "__7__", "_
 
 
 def user_choose_level():
+	"""
+	function user_choose_level returns function user_guess_word with
+	parameters respectively when the input is valid, otherwise
+	return itself
+	inputs: None
+	outputs: call function user_choose_level() or user_choose_level()   
+
+	"""
 	level_choice = raw_input("Please select a game difficulty by typing it in!\n\
-Possible choices include easy, medium, and hard.\n")
-	if level_choice.lower() == "easy":
+Possible choices include easy, medium, and hard.\n").lower()
+	if level_choice == "easy":
 		print "You've chosen easy!\n\nYou will get 5 guesses per problem\n"
 		return user_guess_word(paragraph_easy, answers_easy, blanks_easy)
 		
-	elif level_choice.lower() == "medium":
+	elif level_choice == "medium":
 		print "You've chosen medium!\n\nYou will get 5 guesses per problem\n"
 		return user_guess_word(paragraph_medium, answers_medium, blanks_medium)
 		
-	elif level_choice.lower() == "hard":
+	elif level_choice == "hard":
 		print "You've chosen hard!\n\nYou will get 5 guesses per problem\n"
 		return user_guess_word(paragraph_hard, answers_hard, blanks_hard)
 
@@ -47,28 +55,36 @@ Possible choices include easy, medium, and hard.\n")
 	
 
 def user_guess_word(paragraph, answers, blanks):
+	"""
+	function user_guess_word takes in three parameters: paragraph, answers, blanks，
+	return strings which give users information about how to play this game and 
+	what to do next.
+	inputs: paragraph, which is a string, answers and blanks which are lists
+	outputs: a string, which tells the users what to do next.
+
+	"""
 	
-	i = 0 #index of blanks
-	j = 5 #number of trys left
-	while i < len(blanks):
+	index_blanks = 0 
+	num_tries = 5 
+	while index_blanks < len(blanks):
 
-		guess = raw_input(paragraph + "\n\n\n" + "What should be substituted in for " + blanks[i] + "?")
-		if guess.lower() == answers[i].lower():
-			paragraph = paragraph.replace(blanks[i], answers[i])
-			i += 1
+		guess = raw_input(paragraph + "\n\n\n" + "What should be substituted in for " + blanks[index_blanks] + "?")
+		if guess.lower() == answers[index_blanks].lower():
+			paragraph = paragraph.replace(blanks[index_blanks], answers[index_blanks])
+			index_blanks += 1
 			print "\nCorrect!\n"
-			if i == len(blanks):
-				print paragraph + "\n\nYou won!\n"
-
+			
 		else:
-			j -= 1
-			if j > 0:
-				print "That isn't the correct answer! Let's try again; you have " + str(j) + " trys left!\n" 
+			num_tries -= 1
+			if num_tries > 0:
+				print "That isn't the correct answer! Let's try again; you have " + str(num_tries) + " trys left!\n" 
 			else:
-				print "You've failed too many straight guesses!  Game over!"
+				print  "You've failed too many straight guesses!  Game over!"
 				break
 
-
+	if index_blanks == len(blanks):
+				print paragraph + "\n\nYou won!\n"
+	
 user_choose_level()
 
 
