@@ -1,8 +1,6 @@
-# sample = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
-# adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
-# don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
-# tuple, and ___4___ or can be more complicated such as objects and lambda functions.'''
-#0. If you need help, you can sign up for a 1 on 1 coaching appointment: https://calendly.com/ipnd1-1/20min/
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 paragraph_easy = "The __1__ is a bunch of computers that communicate\n\
 with each other. When writing HTML, we tell __2__s the type\n\
 of each __3__ by using HTML __4__s."
@@ -26,32 +24,55 @@ answers_hard = ["inline", "block", "code", "editor", "closing", "opening", "repe
 blanks_hard = ["__1__", "__2__", "__3__", "__4__", "__5__", "__6__", "__7__", "__8__"]
 
 
+# def user_choose_level():
+# 	"""
+# 	function user_choose_level returns function user_guess_word with
+# 	parameters respectively when the input is valid, otherwise
+# 	return itself
+# 	inputs: None
+# 	outputs: call function user_choose_level() or user_choose_level()   
+
+# 	"""
+# 	level_choice = raw_input("Please select a game difficulty by typing it in!\n\
+# Possible choices include easy, medium, and hard.\n").lower()
+# 	if level_choice == "easy":
+# 		print "You've chosen easy!\n\nYou will get 5 guesses per problem\n"
+# 		return user_guess_word(paragraph_easy, answers_easy, blanks_easy)
+		
+# 	elif level_choice == "medium":
+# 		print "You've chosen medium!\n\nYou will get 5 guesses per problem\n"
+# 		return user_guess_word(paragraph_medium, answers_medium, blanks_medium)
+		
+# 	elif level_choice == "hard":
+# 		print "You've chosen hard!\n\nYou will get 5 guesses per problem\n"
+# 		return user_guess_word(paragraph_hard, answers_hard, blanks_hard)
+
+# 	else:
+# 		print "That's not an option!"
+# 		user_choose_level()
+
 def user_choose_level():
-	"""
-	function user_choose_level returns function user_guess_word with
-	parameters respectively when the input is valid, otherwise
-	return itself
-	inputs: None
-	outputs: call function user_choose_level() or user_choose_level()   
+    """
+    function user_choose_level returns function user_guess_word with
+    parameters respectively when the input is valid, otherwise
+    return itself
+    inputs: None
+    outputs: call function user_choose_level() or user_choose_level()   
 
-	"""
-	level_choice = raw_input("Please select a game difficulty by typing it in!\n\
+    """
+    level_choice = raw_input("Please select a game difficulty by typing it in!\n\
 Possible choices include easy, medium, and hard.\n").lower()
-	if level_choice == "easy":
-		print "You've chosen easy!\n\nYou will get 5 guesses per problem\n"
-		return user_guess_word(paragraph_easy, answers_easy, blanks_easy)
-		
-	elif level_choice == "medium":
-		print "You've chosen medium!\n\nYou will get 5 guesses per problem\n"
-		return user_guess_word(paragraph_medium, answers_medium, blanks_medium)
-		
-	elif level_choice == "hard":
-		print "You've chosen hard!\n\nYou will get 5 guesses per problem\n"
-		return user_guess_word(paragraph_hard, answers_hard, blanks_hard)
-
-	else:
-		print "That's not an option!"
-		user_choose_level()
+    while level_choice not in ["easy", "medium", "hard"]:
+        level_choice = raw_input("That's not an option!\nPlease select a game difficulty by typing it in!\n\
+Possible choices include easy, medium, and hard.\n").lower()
+    announce = "You've chosen {0}!\n\nYou will get 5 guesses per problem\n".format(level_choice)
+    print(announce)
+    if level_choice == "easy":
+        return user_guess_word(paragraph_easy, answers_easy, blanks_easy)
+    elif level_choice == "medium":
+        return user_guess_word(paragraph_medium, answers_medium, blanks_medium)
+    elif level_choice == "hard":
+        return user_guess_word(paragraph_hard, answers_hard, blanks_hard)
 	
 
 def user_guess_word(paragraph, answers, blanks):
@@ -84,7 +105,5 @@ def user_guess_word(paragraph, answers, blanks):
 
 	if index_blanks == len(blanks):
 				print paragraph + "\n\nYou won!\n"
-	
+
 user_choose_level()
-
-
