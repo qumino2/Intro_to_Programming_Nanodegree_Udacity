@@ -1,1 +1,1 @@
-# intro_nanodegree_Udacity
+# Intro_to_Programming_Nanodegree_Udacity
