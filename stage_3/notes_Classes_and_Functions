@@ -1,0 +1,16 @@
+1. 定义Class 和 创建新的class intance 最好分别写在两个py文件中（用import调用）
+2. Class名字的首字母要大写，class variables如果是常量则命名字母最好大写
+3. 学会使用 Predefined Class Variable, __doc__  __name__  __module__   例如："""write your docstring here"""  print (media.Movie.__doc__)
+4. Inheritance:
+class Parent():
+	def __init__(self, last_name, eye_color):
+		print("Parent Constructor Called")
+		self.last_name = last_name
+		self.eye_color = eye_color
+
+class Child(Parent):
+	def __init__(self, last_name, eye_color, number_of_toys):
+		print("Child Constructor Called")
+		Parent.__init__(self, last_name, eye_color)
+		self.number_of_toys = number_of_toys
+
